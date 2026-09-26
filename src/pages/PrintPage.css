@@ -1,0 +1,33 @@
+@page { size: A4 portrait; margin: 12mm; }
+
+.print { background: #e5e7eb; min-height: calc(100vh - 48px); padding-bottom: 40px; }
+.print__controls {
+  position: sticky; top: 0; z-index: 5; display: flex; gap: 16px; align-items: center;
+  padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--ui-border); font-size: 13px;
+}
+
+.print__page {
+  width: 210mm; height: 297mm; margin: 20px auto; padding: 12mm; background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; overflow: hidden;
+}
+.print__head {
+  display: flex; justify-content: space-between; gap: 12px; font-size: 10pt;
+  border-bottom: 1px solid #9ca3af; padding-bottom: 3mm; margin-bottom: 5mm;
+}
+.print__slides { flex: 1; display: grid; gap: 6mm; }
+.print__page--notes .print__slides { grid-template-rows: repeat(3, 1fr); }
+.print__page--grid .print__slides { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 1fr); align-items: start; }
+
+.print__item .slide { border: 1px solid #9ca3af; border-radius: 0; }
+.print__page--notes .print__item { display: grid; grid-template-columns: 120mm 1fr; gap: 5mm; align-items: start; }
+.print__lines {
+  height: 100%; min-height: 67mm;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 7.5mm, #9ca3af 7.5mm, #9ca3af calc(7.5mm + 0.3px));
+}
+
+@media print {
+  .print { background: none; padding: 0; min-height: 0; }
+  .print__page { margin: 0; box-shadow: none; width: auto; height: calc(297mm - 24mm); padding: 0; break-after: page; }
+  .print__page:last-child { break-after: auto; }
+  .slide { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

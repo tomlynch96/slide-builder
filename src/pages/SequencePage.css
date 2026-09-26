@@ -1,0 +1,19 @@
+.seq-grid { display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start; }
+@media (max-width: 960px) { .seq-grid { grid-template-columns: 1fr; } }
+
+.lesson-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 6px; }
+.lesson-row {
+  display: grid; grid-template-columns: auto 34px 1fr auto; gap: 10px; align-items: center;
+  background: #fff; border: 1px solid var(--ui-border); border-radius: 10px; padding: 10px 12px;
+}
+.lesson-row.is-dragging { opacity: 0.5; border-style: dashed; }
+.lesson-row__handle { cursor: grab; color: var(--ui-text-muted); letter-spacing: -2px; user-select: none; }
+.lesson-row__num { font-weight: 700; color: var(--ui-accent); }
+.lesson-row__title { font-weight: 600; color: #111827; text-decoration: none; }
+.lesson-row__title:hover { color: var(--ui-accent); }
+.lesson-row__meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 3px; font-size: 12px; }
+
+.new-lesson { margin-top: 8px; }
+.spec-points { display: flex; flex-direction: column; gap: 4px; max-height: 260px; overflow: auto; }
+.spec-point { display: flex; gap: 8px; align-items: baseline; font-size: 13px; padding: 3px 0; cursor: pointer; }
+.spec-point.is-covered { color: var(--ui-text-muted); }

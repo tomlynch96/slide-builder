@@ -1,0 +1,6 @@
+.topbar {
+  height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 20px;
+  background: #fff; border-bottom: 1px solid var(--ui-border);
+}
+.topbar__brand { font-weight: 700; font-size: 15px; color: #111827; text-decoration: none; }
+.topbar__tag { font-size: 12px; color: var(--ui-text-muted); }

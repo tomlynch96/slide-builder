@@ -1,0 +1,19 @@
+.present { position: fixed; inset: 0; background: #111827; display: flex; flex-direction: column; }
+.present__stage { flex: 1; display: grid; place-items: center; min-height: 0; cursor: pointer; padding: 1vh; }
+/* Largest 16:9 box that fits */
+.present__frame { width: min(100%, calc((100vh - 56px - 2vh) * 16 / 9)); }
+.present__frame .slide { border-radius: 0; }
+
+.present__bar {
+  height: 48px; display: flex; align-items: center; gap: 6px; padding: 0 12px;
+  background: #0b1120; opacity: 0.35; transition: opacity 0.2s;
+}
+.present__bar:hover, .present__bar:focus-within { opacity: 1; }
+.present__btn {
+  background: transparent; border: 1px solid #374151; color: #e5e7eb; border-radius: 7px;
+  padding: 6px 12px; font-size: 13px; text-decoration: none;
+}
+.present__btn:hover:not(:disabled) { background: #1f2937; }
+.present__btn:disabled { opacity: 0.35; }
+.present__btn--accent { border-color: var(--ui-accent); color: #c7d2fe; }
+.present__count { color: #9ca3af; font-size: 13px; min-width: 56px; text-align: center; font-variant-numeric: tabular-nums; }

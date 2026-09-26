@@ -1,0 +1,94 @@
+/* All sizes are in cqw (1% of slide width) so a slide scales identically
+   from a sidebar thumbnail to full screen and to print. */
+
+.slide {
+  container-type: inline-size;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: var(--slide-bg);
+  color: var(--slide-text);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--slide-font);
+}
+
+.slide__inner {
+  position: absolute;
+  inset: 0;
+  padding: 4cqw 5cqw;
+  font-size: 2.3cqw;
+  line-height: 1.35;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide h1 { font-size: 5cqw; margin: 0 0 1.5cqw; line-height: 1.1; color: var(--slide-heading); }
+.slide h2 { font-size: 3.6cqw; margin: 0 0 2cqw; line-height: 1.15; color: var(--slide-heading); }
+.slide h3 { font-size: 2.4cqw; margin: 2cqw 0 1cqw; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slide-accent); }
+.slide h4 { font-size: 2cqw; margin: 0 0 0.8cqw; color: var(--slide-accent); }
+.slide p { margin: 0 0 1.2cqw; }
+.slide ul, .slide ol { margin: 0; padding-left: 3cqw; }
+.slide li { margin-bottom: 1cqw; }
+
+.s-kicker { font-size: 1.8cqw; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slide-accent); font-weight: 600; }
+.s-prompt { margin-top: auto !important; padding-top: 1.5cqw; font-weight: 600; }
+.s-answer { display: block; color: var(--slide-good); font-weight: 600; }
+
+.s-card {
+  background: var(--slide-card);
+  border-radius: 1cqw;
+  padding: 1.6cqw 2cqw;
+}
+.s-card p { margin: 0; }
+.s-card--yes { border-left: 0.6cqw solid var(--slide-good); }
+.s-card--no { border-left: 0.6cqw solid var(--slide-bad); }
+
+/* Title + recall */
+.s-title { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4cqw; height: 100%; }
+.s-title:has(> :only-child) { grid-template-columns: 1fr; }
+.s-title__main { display: flex; flex-direction: column; justify-content: center; }
+.s-title__recall { background: var(--slide-card); border-radius: 1.2cqw; padding: 2cqw 2.5cqw; overflow: hidden; }
+.s-title__recall h3 { margin-top: 0; }
+.s-title__recall li { font-size: 2cqw; }
+
+/* Vocab */
+.s-vocab__word { font-size: 6cqw; margin-bottom: 0.5cqw; }
+.s-vocab__def { font-size: 2.6cqw; }
+.s-vocab__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5cqw; }
+
+/* Hinge */
+.s-hinge__options { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8cqw; margin-top: auto; margin-bottom: auto; }
+.s-hinge__opt {
+  display: flex; align-items: center; gap: 1.8cqw;
+  background: var(--slide-card); border-radius: 1cqw; padding: 2cqw;
+  font-size: 2.5cqw; border: 0.3cqw solid transparent;
+}
+.s-hinge__opt.is-correct { border-color: var(--slide-good); }
+.s-hinge__letter {
+  flex: none; width: 4.5cqw; height: 4.5cqw; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700;
+  background: var(--slide-accent); color: #fff;
+}
+
+/* Info */
+.s-info__body { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3cqw; flex: 1; }
+.s-info__body:has(> :only-child) { grid-template-columns: 1fr; }
+.s-info__visual {
+  border: 0.25cqw dashed var(--slide-muted); border-radius: 1cqw;
+  padding: 2cqw; color: var(--slide-muted); font-size: 1.9cqw; font-style: italic;
+  display: grid; place-items: center; text-align: center;
+}
+
+/* Examples */
+.s-examples__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2cqw; }
+
+/* Modelling */
+.s-modelling { height: 100%; }
+.s-modelling h2 { font-size: 2.8cqw; }
+.s-modelling p { color: var(--slide-muted); }
+
+/* Task / answers */
+.s-task__instr { font-style: italic; }
+.s-task ol li { font-size: 2.3cqw; }
+.s-answers ol li { color: var(--slide-text); }
